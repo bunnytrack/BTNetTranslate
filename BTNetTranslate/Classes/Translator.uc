@@ -29,10 +29,10 @@ simulated event PostBeginPlay() {
 
 function bool MutatorTeamMessage(Actor                 Sender,
                                  Pawn                  Receiver,
-								 PlayerReplicationInfo PRI,
-								 coerce string         S,
-								 name                  Type,
-								 optional bool         bBeep) {
+                                 PlayerReplicationInfo PRI,
+                                 coerce string         S,
+                                 name                  Type,
+                                 optional bool         bBeep) {
 
 	local PlayerPawn A;
 	local string paramContent;
