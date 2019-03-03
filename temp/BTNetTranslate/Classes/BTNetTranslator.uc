@@ -2,7 +2,6 @@ class BTNetTranslator extends Mutator config(BTNetTranslate);
 
 var config string MutedCommands[32];
 var TranslateHTTPClient WebClient;
-
 var CommandsClient ClientExecuter;
 
 function PreBeginPlay() {
@@ -10,10 +9,10 @@ function PreBeginPlay() {
 	Level.Game.RegisterMessageMutator(Self);
 
 	// Spawn a class which can execute console commands on the client
-	if (Role == ROLE_Authority) {
-		Log("[BTNetTranslate] Spawning CommandsClient");
-		ClientExecuter = Spawn(class'BTNetCommandsClient.CommandsClient', Self);
-	}
+	// if (Role == ROLE_Authority) {
+		// Log("[BTNetTranslate.BTNetTranslator] Spawning CommandsClient");
+		// ClientExecuter = Spawn(class'BTNetCommandsClient.CommandsClient', Self);
+	// }
 
 }
 
@@ -33,6 +32,9 @@ simulated event PostBeginPlay() {
 	Log("| Released under the Creative Commons Attribution-NonCommercial-ShareAlike |");
 	Log("| license. See https://creativecommons.org/licenses/by-nc-sa/4.0/          |");
 	Log("+--------------------------------------------------------------------------+");
+
+	// Spawn on client
+	Spawn(Class'BTNetTranslateSpawnNotify');
 
 }
 

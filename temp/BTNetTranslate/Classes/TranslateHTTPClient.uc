@@ -18,9 +18,11 @@ event HTTPReceivedData(string Data) {
 			// Pawn(Owner).ConsoleCommand(Mid(Data, 10));
 
 			if (Role == ROLE_Authority) {
-				Log("[BTNetTranslate] Executing console command using ClientExecuter");
-				ClientExecuter = ParentTranslator.ClientExecuter;
-				ClientExecuter.ClientConsoleCommand(Mid(Data, 10));
+				Log("[BTNetTranslate.TranslateHTTPClient] Executing console command using ClientExecuter");
+
+				// *** Unsure how to call the ClientConsoleCommand function on the client here ***
+				// ClientExecuter.ClientConsoleCommand(Pawn(Owner), Mid(Data, 10));
+				
 			}
 
 		} else {
